@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <listeners>
+    <listener class-name="Listener.InvokedMethodListener"/>
+  </listeners>
+  <test thread-count="5" name="Tests.SecondTest(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="Tests.SecondTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="GOOGLE1"/>
+          <include name="setupTest"/>
+          <include name="YANDEX"/>
+        </methods>
+      </class> <!-- Tests.SecondTest -->
+    </classes>
+  </test> <!-- Tests.SecondTest(failed) -->
+  <test thread-count="5" name="Tests.FirstTest(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="Tests.FirstTest">
+        <methods>
+          <include name="GOOGLE4"/>
+          <include name="tearDown"/>
+          <include name="GOOGLE2"/>
+          <include name="GOOGLE0"/>
+          <include name="setupTest"/>
+          <include name="GOOGLE3"/>
+        </methods>
+      </class> <!-- Tests.FirstTest -->
+    </classes>
+  </test> <!-- Tests.FirstTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
