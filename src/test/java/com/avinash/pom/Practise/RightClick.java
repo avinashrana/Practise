@@ -114,5 +114,9 @@ public class RightClick {
 		js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "");
 	}
 	// My name is Avinash Rana and i am typing this statement because i want to trigger a job in jenkins
+	@AfterClass
+	public void tearDown() {
+		driver.close();
+	}
 
 }
